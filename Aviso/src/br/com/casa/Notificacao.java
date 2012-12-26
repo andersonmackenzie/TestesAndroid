@@ -55,10 +55,10 @@ public class Notificacao extends Activity implements OnClickListener {
 
 		aviso.flags |= Notification.FLAG_AUTO_CANCEL;
 
-		PendingIntent p = PendingIntent.getActivity(this, 0,
+		PendingIntent pIntent = PendingIntent.getActivity(this, 0,
 				new Intent(this.getApplicationContext(), Notificacao.class), 0);
 
-		aviso.setLatestEventInfo(this, msg.getSubtitulo(), msg.getMensagem(), p);
+		aviso.setLatestEventInfo(this, msg.getSubtitulo(), msg.getMensagem(), pIntent);
 
 		aviso.vibrate = new long[] { 100, 1000, 1000, 1000 };
 
